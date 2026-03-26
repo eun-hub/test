@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이탈리아로의 초대</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans KR"', 'sans-serif'],
+                        cinzel: ['"Cinzel"', 'serif'],
+                    },
+                    colors: {
+                        'oceanBlue': '#1E40AF',
+                        'skyBlue': '#E0F2FE'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfbf9;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='#e0dcd3' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out forwards;
+            opacity: 0;
+        }
+        
+        .slide-up {
+            animation: slideUp 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .image-overlay {
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center py-10 px-4">
+
+    <!-- 메인 초대장 카드 -->
+    <div class="max-w-xl w-full bg-white rounded-2xl shadow-2xl overflow-hidden fade-in relative border border-gray-100">
+        
+        <!-- 상단 헤더 이미지 -->
+        <div class="relative h-96 w-full">
+            <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                 alt="Cinque Terre, Italy" 
+                 class="w-full h-full object-cover"
+                 onerror="this.src='https://images.unsplash.com/photo-1498307833015-e7b400441eb8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80'">
+            <div class="absolute inset-0 image-overlay"></div>
+            
+            <div class="absolute bottom-0 left-0 w-full p-8 text-center slide-up delay-1">
+                <p class="text-skyBlue font-cinzel tracking-widest text-sm mb-2 uppercase">Invitation to</p>
+                <h1 class="text-white text-5xl font-bold font-cinzel tracking-wider drop-shadow-md">ITALIA</h1>
+            </div>
+        </div>
+
+        <!-- 본문 내용 -->
+        <div class="p-8 md:p-12 text-center">
+            
+            <div class="slide-up delay-2">
+                <h2 class="text-2xl text-gray-800 font-bold mb-6">당신을 이탈리아로 초대합니다</h2>
+                
+                <p class="text-gray-600 leading-relaxed mb-8">
+                    일상의 분주함을 잠시 내려놓고,<br>
+                    지중해의 따뜻한 햇살과 고대 로마의 숨결이 살아있는<br>
+                    이탈리아로 함께 떠나지 않으시겠어요?<br><br>
+                    아름다운 예술과 낭만적인 골목길,<br>
+                    그리고 맛있는 젤라토가 우리를 기다리고 있습니다.
+                </p>
+
+                <!-- 일정 및 장소 정보 -->
+                <div class="bg-gray-50 rounded-xl p-6 mb-8 border border-gray-100 text-left space-y-4">
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-oceanBlue mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <div>
+                            <p class="text-sm text-gray-500 font-semibold">일정 (Date)</p>
+                            <p class="text-gray-800">2026년 9월 (세부 일정 조율)</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="w-6 h-6 text-oceanBlue mr-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <div>
+                            <p class="text-sm text-gray-500 font-semibold">여정 (Destinations)</p>
+                            <p class="text-gray-800">로마 - 피렌체 - 베네치아 - 포시타노</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 하이라이트 아이콘 갤러리 -->
+                <div class="grid grid-cols-3 gap-4 mb-10 text-center">
+                    <div class="flex flex-col items-center">
+                        <div class="w-14 h-14 bg-skyBlue rounded-full flex items-center justify-center mb-2 text-2xl">
+                            🏛️
+                        </div>
+                        <span class="text-xs text-gray-600">역사와 예술</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-14 h-14 bg-skyBlue rounded-full flex items-center justify-center mb-2 text-2xl">
+                            🍷
+                        </div>
+                        <span class="text-xs text-gray-600">미식 여행</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-14 h-14 bg-skyBlue rounded-full flex items-center justify-center mb-2 text-2xl">
+                            🛶
+                        </div>
+                        <span class="text-xs text-gray-600">낭만적인 휴식</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RSVP 버튼 -->
+            <div class="slide-up delay-3 flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                <button onclick="handleRSVP(true)" class="px-8 py-3 bg-oceanBlue text-white rounded-full font-bold hover:bg-opacity-90 transition-all transform hover:scale-105 shadow-lg">
+                    함께 갈게요! ✈️
+                </button>
+                <button onclick="handleRSVP(false)" class="px-8 py-3 bg-white border-2 border-gray-200 text-gray-600 rounded-full font-bold hover:bg-gray-50 transition-all">
+                    조금 더 생각해볼게요
+                </button>
+            </div>
+            
+            <div class="mt-8">
+                <p class="text-sm text-gray-400 font-cinzel italic">Ci vediamo in Italia!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 창 (알림창 대체) -->
+    <div id="rsvpModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full mx-4 text-center transform scale-95 transition-transform duration-300" id="modalContent">
+            <div id="modalIcon" class="text-5xl mb-4">🎉</div>
+            <h3 id="modalTitle" class="text-2xl font-bold text-gray-800 mb-2">환영합니다!</h3>
+            <p id="modalMessage" class="text-gray-600 mb-6">함께 이탈리아의 낭만을 즐길 생각에 벌써부터 설레네요. 곧 상세 일정을 공유해 드릴게요!</p>
+            <button onclick="closeModal()" class="w-full py-3 bg-oceanBlue text-white rounded-lg font-bold hover:bg-opacity-90 transition-colors">
+                확인
+            </button>
+        </div>
+    </div>
+
+    <script>
+        function handleRSVP(isAccepted) {
+            const modal = document.getElementById('rsvpModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalMessage = document.getElementById('modalMessage');
+            const modalIcon = document.getElementById('modalIcon');
+            const modalContent = document.getElementById('modalContent');
+
+            if (isAccepted) {
+                modalIcon.textContent = "🥂";
+                modalTitle.textContent = "비행기 티켓을 준비할게요!";
+                modalMessage.innerHTML = "함께 이탈리아의 낭만을 즐길 생각에 벌써부터 설레네요.<br>곧 여행 계획 회의를 잡아보아요!";
+            } else {
+                modalIcon.textContent = "💌";
+                modalTitle.textContent = "아쉽지만 다음 기회에!";
+                modalMessage.innerHTML = "언제든 마음이 바뀌면 알려주세요.<br>당신의 자리는 항상 비워둘게요.";
+            }
+
+            // Show modal with animation
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            // Trigger reflow
+            void modal.offsetWidth;
+            modal.classList.remove('opacity-0');
+            modalContent.classList.remove('scale-95');
+            modalContent.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('rsvpModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            modal.classList.add('opacity-0');
+            modalContent.classList.remove('scale-100');
+            modalContent.classList.add('scale-95');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }, 300);
+        }
+    </script>
+</body>
+</html>
